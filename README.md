@@ -6,9 +6,10 @@ En Nicaragua, nuestra riqueza cultural vive en la memoria de las comunidades: en
 ## Ejecutar el proyecto (Expo React Native)
 
 Requisitos previos:
-- Node.js LTS instalado (incluye npm)
-- App Expo Go en tu teléfono (Android o iOS) o un emulador Android instalado
-
+tener descargado Android Studio.
+tener el sdk de flutter.
+tener Visual studio code.
+Sdk.
 ### 1) Instalar dependencias
 
 En Windows PowerShell, desde la carpeta del proyecto (`echo-app`):
