@@ -1,7 +1,7 @@
-Hackathon Nicaragua Reto de Memoria Viva Nicaragua 2025 - Equipo Echo
-Nombre de la app: Kúentalo
+Hackathon Nicaragua Reto Circuitos Creativos de la Red Nacional de Ciudades Creativas 2026 - Equipo Gallopintopower
+Nombre de la app: Asla
 
-En Nicaragua, nuestra riqueza cultural vive en la memoria de las comunidades: en los relatos de los abuelos, en las recetas tradicionales, en las ferias patronales y en las leyendas transmitidas de generación en generación, pero gran parte de este conocimiento corre el riesgo de perderse por la falta de un espacio digital donde preservarlo y compartirlo. Kuéntalo nace como una aplicación educativa y cultural para rescatar, registrar y difundir estos saberes de manera colaborativa
+Se requiere conectar a las Ciudades Creativas de Nicaragua con el mundo, dar a conocer mapas interactivos que recorren los circuitos creativos, experiencias inmersivas para localizar, conocer y compartir riqueza histórica, natural, saberes populares, culturales y tradicionales de nuestro pueblo; agenda de actividades como presentaciones, talleres, ferias, expo-ventas.
 
 ## Ejecutar el proyecto (Expo React Native)
 
@@ -47,4 +47,5 @@ También tienes tareas en VS Code:
 npx expo start -c
 ```
 
-- Versiones: este proyecto usa Expo `~54`, React `19`, React Native `0.81`. Usa la app Expo Go compatible más reciente.
+- Versiones: Este proyecto usa visual studio code version 1.127.0, flutter  3.44.0 y visual Android Studio Panda 4 | 2025.3.4 Patch 1.
+
