@@ -33,11 +33,6 @@ También tienes tareas en VS Code:
 
 - Android SDK/Emulador: si usas emulador, asegúrate de tener Android Studio y un AVD iniciado antes de `npm run android`.
 - Red/Firewall: Expo usa puertos locales; si no se conecta el móvil, prueba el modo "Tunnel" en la UI de Expo o permite la app en el firewall.
-- Limpiar caché de Expo si ves errores extraños:
-
-```powershell
-npx expo start -c
-```
 
 - Versiones: Este proyecto usa visual studio code version 1.127.0, flutter  3.44.0 y visual Android Studio Panda 4 | 2025.3.4 Patch 1.
 
