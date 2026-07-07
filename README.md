@@ -3,7 +3,7 @@ Nombre de la app: Asla
 
 Se requiere conectar a las Ciudades Creativas de Nicaragua con el mundo, dar a conocer mapas interactivos que recorren los circuitos creativos, experiencias inmersivas para localizar, conocer y compartir riqueza histórica, natural, saberes populares, culturales y tradicionales de nuestro pueblo; agenda de actividades como presentaciones, talleres, ferias, expo-ventas.
 
-## Ejecutar el proyecto (Expo React Native)
+## Ejecutar el proyecto (Flutter)
 
 Requisitos previos:
 tener descargado Android Studio.
@@ -11,31 +11,23 @@ tener el sdk de flutter.
 tener Visual studio code.
 Sdk.
 ### 1) Instalar dependencias
-
-En Windows PowerShell, desde la carpeta del proyecto (`echo-app`):
-
-```powershell
-npm install
-```
-
-O puedes usar la tarea ya creada en VS Code: Terminal > Run Task… > "Install dependencies".
+desde la terminual de VS code Terminal > flutter doctor
+y para ejecutar la carpeta flutter create Asla && cd Asla && flutter run.
 
 ### 2) Iniciar el servidor de desarrollo
 
-- Modo general (Expo Dev Server):
-
-```powershell
-npm run start
-```
-
-Esto abrirá Expo Developer Tools. Desde ahí puedes:
-- Android: presionar "a" o usar "Run on Android device/emulator".
-- Web: presionar "w" o ejecutar `npm run web`.
+Modo general (Flutter Dev Server):
+PowerShell
+flutter run
+Esto abrirá las herramientas de desarrollo de Flutter. Desde ahí puedes:
+Android: presionar "a" si el entorno se pausa o para recargar (Hot Reload presiona "r").
+Web: presionar "d" para abrir las herramientas en el navegador o ejecutar flutter run -d chrome.
 
 También tienes tareas en VS Code:
-- "Start Expo" (equivale a `npm run start`)
-- "Start Android" (equivale a `npm run android`)
-- "Start Web" (equivale a `npm run web`)
+
+"Start Flutter" (equivale a flutter run)
+"Hot Reload" (equivale a presionar r en la terminal)
+"Hot Restart" (equivale a presionar R en la terminal)
 
 ### Notas y solución de problemas
 
