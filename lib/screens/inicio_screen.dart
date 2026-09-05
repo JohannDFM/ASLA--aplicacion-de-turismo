@@ -332,7 +332,7 @@ class InicioScreen extends StatelessWidget {
           
           // 2. Capa oscura para dar contraste
           Container(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
           ),
 
           // 3. Badge de fecha (Esquina superior izquierda)

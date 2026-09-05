@@ -20,17 +20,19 @@ class _AuthOptionsScreenState extends State<AuthOptionsScreen> {
         children: [
           // Fondo de montañas en la parte inferior
           Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: SizedBox(
-              width: size.width,
-              height: size.height * 0.32,
-              child: CustomPaint(
-                painter: _MountainPainter(),
-              ),
-            ),
-          ),
+  left: 0,
+  right: 0,
+  bottom: 0,
+  child: SizedBox(
+    width: size.width,
+    height: size.height * 0.32,
+    child: Image.asset(
+  'assets/images/montañas.png',
+  fit: BoxFit.fitWidth,
+  alignment: Alignment.bottomCenter,
+),
+  ),
+),
 
           SafeArea(
             child: SingleChildScrollView(
@@ -260,53 +262,4 @@ class _SocialButton extends StatelessWidget {
   }
 }
 
-/// Dibuja el paisaje de montañas en capas (estilo banner) que aparece
-/// al fondo de la pantalla, inspirado en el mockup de Figma.
-class _MountainPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final w = size.width;
-    final h = size.height;
 
-    final backPaint = Paint()..color = const Color(0xFF6FA8C9);
-    final backPath = Path()
-      ..moveTo(0, h * 0.55)
-      ..lineTo(w * 0.18, h * 0.30)
-      ..lineTo(w * 0.35, h * 0.50)
-      ..lineTo(w * 0.55, h * 0.20)
-      ..lineTo(w * 0.75, h * 0.48)
-      ..lineTo(w, h * 0.32)
-      ..lineTo(w, h)
-      ..lineTo(0, h)
-      ..close();
-    canvas.drawPath(backPath, backPaint);
-
-    final midPaint = Paint()..color = const Color(0xFF2C6E8E);
-    final midPath = Path()
-      ..moveTo(0, h * 0.72)
-      ..lineTo(w * 0.22, h * 0.42)
-      ..lineTo(w * 0.42, h * 0.65)
-      ..lineTo(w * 0.6, h * 0.38)
-      ..lineTo(w * 0.82, h * 0.62)
-      ..lineTo(w, h * 0.48)
-      ..lineTo(w, h)
-      ..lineTo(0, h)
-      ..close();
-    canvas.drawPath(midPath, midPaint);
-
-    final frontPaint = Paint()..color = const Color(0xFF1A3A4A);
-    final frontPath = Path()..moveTo(0, h * 0.86);
-    for (double x = 0; x <= w; x += w / 14) {
-      final peakY = (x ~/ (w / 14)).isEven ? h * 0.70 : h * 0.82;
-      frontPath.lineTo(x, peakY);
-    }
-    frontPath
-      ..lineTo(w, h)
-      ..lineTo(0, h)
-      ..close();
-    canvas.drawPath(frontPath, frontPaint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
