@@ -1,5 +1,6 @@
+import 'package:asla/register_screen.dart';
 import 'package:flutter/material.dart';
-import 'register_screen.dart';
+
 import 'main.screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -122,39 +123,72 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 28),
 
               // Botón
-             SizedBox(
-  width: double.infinity,
-  height: 52,
-  child: ElevatedButton(
-    onPressed: () {
-      // Aquí luego se debe validar el correo/contraseña contra
-      // tu backend/auth antes de navegar. Por ahora navega
-      // directo a la interfaz principal con las 4 pestañas.
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const MainScreen(),   // <- aquí quita el "const"
+              SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Aquí luego se debe validar el correo/contraseña contra
+                    // tu backend/auth antes de navegar. Por ahora navega
+                    // directo a la interfaz principal con las 4 pestañas.
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainScreen(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF008B8B),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    elevation: 4,
+                  ),
+                  child: const Text(
+                    'Iniciar Sesión',
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              // Enlace a registro
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    '¿No tienes cuenta? ',
+                    style: TextStyle(color: Color(0xFF5A7A8A)),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterScreen(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'Regístrate',
+                      style: TextStyle(
+                        color: Color(0xFF00A8E8),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 40),
+            ],
+          ),
         ),
-      );
-    },
-    style: ElevatedButton.styleFrom(
-      backgroundColor: const Color(0xFF008B8B),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
       ),
-      elevation: 4,
-    ),
-    child: const Text(
-      'Iniciar Sesión',
-      style: TextStyle(
-        fontSize: 17,
-        fontWeight: FontWeight.w600,
-        color: Colors.white,
-               ), // SizedBox
-            ), // children
-          ), // Column
-        ), // SingleChildScrollView
-            ], // SafeArea
-    ) // Scaffold
+    );
   }
 }

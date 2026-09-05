@@ -145,7 +145,7 @@ class InicioPage extends StatelessWidget {
                           Text(
                             'Comenzar Aventura',
                             style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 13,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
