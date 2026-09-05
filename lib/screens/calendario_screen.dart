@@ -23,50 +23,79 @@ class _CalendarioScreenState extends State<CalendarioScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3E9D2),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildHeader(),
-              const SizedBox(height: 6),
-              const Text(
-                'Descubre eventos creativos y tecnológicos hoy.',
-                style: TextStyle(fontSize: 13, color: Color(0xFF5A7A8A)),
+      body: Stack(
+        children: [
+          // Fondo con la silueta de León (catedral/volcán), semitransparente
+          // para que no compita con el texto. Coloca tu imagen en
+          // assets/images/fondo_leon.png.
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.25,
+              child: Image.asset(
+                'assets/images/fondo2.png',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  // Mientras no exista la imagen, no se rompe la pantalla.
+                  return const SizedBox.shrink();
+                },
               ),
-              const SizedBox(height: 16),
-              _buildFiltros(),
-              const SizedBox(height: 22),
-              const Text(
-                'Agosto 2026',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF1A3A4A)),
-              ),
-              const SizedBox(height: 12),
-              _buildSelectorDias(),
-              const SizedBox(height: 22),
-              Row(
+            ),
+          ),
+          SafeArea(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  _buildHeader(),
+                  const SizedBox(height: 6),
                   const Text(
-                    'Eventos 15 Agosto',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFF1A3A4A)),
+                    'Descubre eventos creativos y tecnológicos hoy.',
+                    style: TextStyle(fontSize: 13, color: Color(0xFF5A7A8A)),
                   ),
-                  const SizedBox(width: 10),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF008B8B),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Text('1 Evento', style: TextStyle(color: Colors.white, fontSize: 11)),
+                  const SizedBox(height: 16),
+                  _buildFiltros(),
+                  const SizedBox(height: 22),
+                  const Text(
+                    'Agosto 2026',
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1A3A4A)),
                   ),
+                  const SizedBox(height: 12),
+                  _buildSelectorDias(),
+                  const SizedBox(height: 22),
+                  Row(
+                    children: [
+                      const Text(
+                        'Eventos 15 Agosto',
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF1A3A4A)),
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF008B8B),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Text('1 Evento',
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 11)),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  _buildEventoCard(),
                 ],
               ),
-              const SizedBox(height: 12),
-              _buildEventoCard(),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -199,7 +228,19 @@ class _CalendarioScreenState extends State<CalendarioScreen> {
         children: [
           Stack(
             children: [
-              Container(height: 130, width: double.infinity, color: const Color(0xFF6B7B4A)),
+              // Foto real del evento en vez del color sólido.
+              // Coloca tu imagen en assets/images/feria_ganadera.png.
+              SizedBox(
+                height: 130,
+                width: double.infinity,
+                child: Image.asset(
+                  'assets/images/feria.png',
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(color: const Color(0xFF6B7B4A));
+                  },
+                ),
+              ),
               Positioned(
                 top: 10,
                 left: 10,

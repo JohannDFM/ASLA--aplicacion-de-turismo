@@ -122,16 +122,20 @@ class InicioScreen extends StatelessWidget {
 }
   
 
-  Widget _buildSectionTitle(String title) {
-    return Text(
+ Widget _buildSectionTitle(String title) {
+  return SizedBox(
+    width: double.infinity,
+    child: Text(
       title,
+      textAlign: TextAlign.center,
       style: const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
         color: Color(0xFF1A3A4A),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildActividadCard() {
     return ClipRRect(
